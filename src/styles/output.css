@@ -636,6 +636,14 @@ main {
   top: 0px;
 }
 
+.top-\[62px\]{
+  top: 62px;
+}
+
+.left-0{
+  left: 0px;
+}
+
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
@@ -677,6 +685,10 @@ main {
   width: 2rem;
 }
 
+.w-full{
+  width: 100%;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -716,6 +728,10 @@ main {
 
 .justify-end{
   justify-content: flex-end;
+}
+
+.justify-center{
+  justify-content: center;
 }
 
 .gap-2{
@@ -777,6 +793,10 @@ main {
 
 .pr-4{
   padding-right: 1rem;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .text-right{
@@ -842,6 +862,14 @@ main {
   transition-duration: 150ms;
 }
 
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -852,6 +880,11 @@ main {
 
 .hover\:bg-white\/10:hover{
   background-color: rgb(255 255 255 / 0.1);
+}
+
+.hover\:bg-white:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:text-zinc-200:hover{
@@ -871,6 +904,10 @@ main {
   top: -0.5rem;
 }
 
+.group.open .group-open\:block{
+  display: block;
+}
+
 .group.open .group-open\:rotate-45{
   --tw-rotate: 45deg;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -885,6 +922,10 @@ main {
 
 .group.open .group-open\:opacity-0{
   opacity: 0;
+}
+
+.peer.open ~ .peer-open\:block{
+  display: block;
 }
 
 @media (min-width: 768px){

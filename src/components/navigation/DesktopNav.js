@@ -27,4 +27,18 @@ function MenuItem({ name, subMenuItems = [] }) {
   );
 }
 
-export default MenuItem;
+function DesktopNav() {
+  return (
+    <div className="hidden flex-1 items-center justify-end md:flex">
+      <MenuItem name="Home" />
+      <MenuItem name="Lineup" />
+      <MenuItem
+        name="Tickets"
+        subMenuItems={["Single Day Ticket", "7 Day Ticket"]}
+      />
+      <MenuItem name="Support" />
+    </div>
+  );
+}
+
+export default DesktopNav;
