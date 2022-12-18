@@ -19,11 +19,8 @@ function SubMenuItem({ itemName }) {
 }
 
 function SubMenu({ items }) {
-  if (items.length > 0) {
-    const subMenu = items.map((item) => <SubMenuItem itemName={item} />);
-    return <div className="hidden group-open:block">{subMenu}</div>;
-  }
-  return <></>;
+  const subMenu = items.map((item, index) => <SubMenuItem key={index.toString()} itemName={item} />);
+  return <div className="hidden group-open:block">{subMenu}</div>;
 }
 
 function MenuItem({ name, subMenuItems = [] }) {
@@ -37,7 +34,7 @@ function MenuItem({ name, subMenuItems = [] }) {
   return (
     <div className={"group relative h-full cursor-pointer text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200 " + (isSubMenuVisible ? "open" : "")} onClick={openRCloseSubMenu}>
       <div className="p-4 text-center font-bold">{name}</div>
-      <SubMenu items={subMenuItems} />
+      { subMenuItems.length > 0 && <SubMenu items={subMenuItems} /> }
     </div>
   );
 }
