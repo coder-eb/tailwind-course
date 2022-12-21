@@ -82,7 +82,7 @@ function Carousel() {
 
 function HeadLiners() {
   return (
-    <div className="mx-auto mt-20 max-w-screen-lg text-zinc-900">
+    <div className="mx-auto mt-20 max-w-screen-lg text-zinc-900 dark:text-zinc-200">
       <h2>Headliners</h2>
       <p>
         Experience the sonic delight from these made-up artists across 7 days
