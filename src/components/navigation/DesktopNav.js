@@ -7,7 +7,9 @@ function SubMenuItem({ itemName }) {
 }
 
 function SubMenu({ items }) {
-  const subMenu = items.map((item, index) => <SubMenuItem key={index.toString()} itemName={item} />);
+  const subMenu = items.map((item, index) => (
+    <SubMenuItem key={index.toString()} itemName={item} />
+  ));
   return (
     <div className="absolute top-full right-0 hidden whitespace-nowrap rounded-b-md bg-pink-500 text-right group-hover:block">
       {subMenu}
@@ -19,7 +21,7 @@ function MenuItem({ name, subMenuItems = [] }) {
   return (
     <div className="group relative flex h-full cursor-pointer items-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-zinc-200">
       <span>{name}</span>
-      { subMenuItems.length > 0 && <SubMenu items={subMenuItems} /> }
+      {subMenuItems.length > 0 && <SubMenu items={subMenuItems} />}
     </div>
   );
 }

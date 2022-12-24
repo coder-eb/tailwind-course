@@ -7,6 +7,8 @@ import Band4 from "../assets/images/band4.jpg";
 import Band5 from "../assets/images/band5.jpg";
 import Band6 from "../assets/images/band6.jpg";
 import Band7 from "../assets/images/band7.jpg";
+import Tickets from "./navigation/Tickets";
+import Lineup from "./navigation/Lineup";
 
 function Card({ image, title, details }) {
   return (
@@ -90,6 +92,9 @@ function HeadLiners() {
         year”
       </p>
       <Carousel />
+      <Lineup />
+      <Tickets />
+      <div class="btn btn-[#000]">Some button</div>
     </div>
   );
 }

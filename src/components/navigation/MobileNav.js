@@ -1,8 +1,12 @@
 import { useState } from "react";
 
-function HamburgerIcon({mobileMenuVisibility, handleMobileMenuVisibility}) {
+function HamburgerIcon({ mobileMenuVisibility, handleMobileMenuVisibility }) {
   return (
-    <div id="mobile-menu-button" className={"group peer " + (mobileMenuVisibility ? "open" : "")} onClick={handleMobileMenuVisibility}>
+    <div
+      id="mobile-menu-button"
+      className={"group peer " + (mobileMenuVisibility ? "open" : "")}
+      onClick={handleMobileMenuVisibility}
+    >
       <div className="relative top-0 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:top-2 group-open:rotate-45"></div>
       <div className="mt-1 h-1 w-8 rounded-full bg-zinc-200 opacity-100 group-open:opacity-0"></div>
       <div className="relative top-0 mt-1 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:-top-2 group-open:-rotate-45"></div>
@@ -19,22 +23,29 @@ function SubMenuItem({ itemName }) {
 }
 
 function SubMenu({ items }) {
-  const subMenu = items.map((item, index) => <SubMenuItem key={index.toString()} itemName={item} />);
+  const subMenu = items.map((item, index) => (
+    <SubMenuItem key={index.toString()} itemName={item} />
+  ));
   return <div className="hidden group-open:block">{subMenu}</div>;
 }
 
 function MenuItem({ name, subMenuItems = [] }) {
-
-  const [ isSubMenuVisible, setIsSubMenuVisible ] = useState(false);
+  const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
   function openRCloseSubMenu() {
     const subMenuVisibility = isSubMenuVisible ? false : true;
     setIsSubMenuVisible(subMenuVisibility);
   }
 
   return (
-    <div className={"group relative h-full cursor-pointer text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200 " + (isSubMenuVisible ? "open" : "")} onClick={openRCloseSubMenu}>
+    <div
+      className={
+        "group relative h-full cursor-pointer text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200 " +
+        (isSubMenuVisible ? "open" : "")
+      }
+      onClick={openRCloseSubMenu}
+    >
       <div className="p-4 text-center font-bold">{name}</div>
-      { subMenuItems.length > 0 && <SubMenu items={subMenuItems} /> }
+      {subMenuItems.length > 0 && <SubMenu items={subMenuItems} />}
     </div>
   );
 }
@@ -48,13 +59,12 @@ function MobileMenu() {
         name="Tickets"
         subMenuItems={["Single Day Ticket", "7 Day Ticket"]}
       />
-      <MenuItem name="Support"/>
+      <MenuItem name="Support" />
     </div>
   );
 }
 
 function MobileNav() {
-
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
 
   function openRCloseMobileMenu() {
@@ -64,7 +74,10 @@ function MobileNav() {
 
   return (
     <div className="my-auto ml-auto block cursor-pointer pr-4 md:hidden">
-      <HamburgerIcon mobileMenuVisibility={isMobileMenuVisible} handleMobileMenuVisibility={openRCloseMobileMenu}/>
+      <HamburgerIcon
+        mobileMenuVisibility={isMobileMenuVisible}
+        handleMobileMenuVisibility={openRCloseMobileMenu}
+      />
       <MobileMenu />
     </div>
   );

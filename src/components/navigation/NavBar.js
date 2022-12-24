@@ -15,7 +15,7 @@ function LogoSection() {
 
 function NavBar() {
   return (
-    <nav className="z-10 sticky top-0 flex bg-gradient-to-r from-rose-500 to-pink-500">
+    <nav className="sticky top-0 z-10 flex bg-gradient-to-r from-rose-500 to-pink-500">
       <LogoSection />
       <DesktopNav />
       <MobileNav />

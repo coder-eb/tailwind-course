@@ -3,30 +3,30 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 function DarkModeToggle() {
-  
-  const [isDarkMode, setIsDarkMode] = useState(JSON.parse(localStorage.getItem('DARK_MODE')) || false);
-  
+  const [isDarkMode, setIsDarkMode] = useState(
+    JSON.parse(localStorage.getItem("DARK_MODE")) || false
+  );
+
   const setDarkMode = () => {
     const mode = isDarkMode ? false : true;
     setIsDarkMode(mode);
-  }
+  };
 
   const handleDarkModeClass = (colorMode) => {
-    if(colorMode) {
-      const classList = document.body.classList
-      if(!classList.contains('dark')) {
-        classList.add('dark');
+    if (colorMode) {
+      const classList = document.body.classList;
+      if (!classList.contains("dark")) {
+        classList.add("dark");
       }
+    } else {
+      document.body.classList.remove("dark");
     }
-    else {
-      document.body.classList.remove('dark');
-    }
-  }
+  };
 
   useEffect(() => {
-    localStorage.setItem('DARK_MODE', JSON.stringify(isDarkMode));
-    handleDarkModeClass(isDarkMode)
-  }, [isDarkMode])
+    localStorage.setItem("DARK_MODE", JSON.stringify(isDarkMode));
+    handleDarkModeClass(isDarkMode);
+  }, [isDarkMode]);
 
   return (
     <div

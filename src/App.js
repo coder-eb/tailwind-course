@@ -7,7 +7,7 @@ function App() {
   return (
     <main className="bg-zinc-200 dark:bg-zinc-900">
       <Header />
-      <DarkModeToggle/>
+      <DarkModeToggle />
       <HeadLiners />
     </main>
   );
